@@ -1,6 +1,6 @@
 # Compiled class file
-target/classes/com/
-target/generated-sources/
+/target/classes/com/
+/target/generated-sources/
 
 # Log file
 *.log
