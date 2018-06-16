@@ -144,7 +144,7 @@
 }
 
 
-
+/* Split-pane */
 .split-pane:horizontal > * > .split-pane-divider {
     -fx-border-color: transparent #1d1d1d transparent #1d1d1d;
     -fx-background-color: transparent, derive(#1d1d1d,20%);
@@ -154,6 +154,7 @@
     -fx-padding: 1 0 0 0;
 }
 
+/* Menu-bar */
 .menu-bar {
     -fx-background-color: derive(#1d1d1d,20%);
     -fx-selection-bar: derive(-fx-background,-7%);
@@ -166,6 +167,7 @@
     -fx-opacity: 0.9;
 }
 
+/* Text-field */
 .text-field{
     -fx-font-family: "Segoe UI Semibold";
 }
