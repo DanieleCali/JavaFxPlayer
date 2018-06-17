@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,158 +15,176 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<!-- Main Panel -->
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
 
+    <!-- Bottom -->
     <bottom>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
+        <HBox minHeight="-Infinity" minWidth="-Infinity">
+            <children>
+                <!-- Add/Remove playlist buttons  -->
+                <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="0.0" prefWidth="0.0">
+                    <children>
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="/images/playlistaction/add.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
-             <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                 <graphic>
-                     <ImageView pickOnBounds="true" smooth="false">
-                         <image>
-                             <Image url="/images/playeraction/lyrics.png" />
-                         </image>
-                     </ImageView>
-                 </graphic>
-             </Button>
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="/images/playlistaction/remove.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
 
-             <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                 <graphic>
-                     <ImageView pickOnBounds="true" smooth="false">
-                         <image>
-                             <Image url="/images/playeraction/play.png" />
-                         </image>
-                     </ImageView>
-                 </graphic>
-             </Button>
+                <Pane prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
 
-             <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                 <graphic>
-                     <ImageView pickOnBounds="true" smooth="false">
-                         <image>
-                             <Image url="/images/playeraction/backward.png" />
-                         </image>
-                     </ImageView>
-                 </graphic>
-             </Button>
+                <!-- Search bar -->
+                <HBox prefHeight="0.0" prefWidth="0.0">
+                    <children>
+                        <TextField minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT"
+                                   prefColumnCount="18" promptText="Search"/>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </bottom>
 
-            <Slider prefHeight="50" HBox.hgrow="ALWAYS" />
+    <!-- Left -->
+    <left>
+        <!-- Playlist view -->
+        <TreeView editable="true" prefHeight="400.0" prefWidth="189.0" BorderPane.alignment="CENTER"/>
+    </left>
 
-             <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                 <graphic>
-                     <ImageView pickOnBounds="true" smooth="false">
-                         <image>
-                             <Image url="/images/playeraction/forward.png" />
-                         </image>
-                     </ImageView>
-                 </graphic>
-             </Button>
+    <!-- Center -->
+    <center>
+        <!-- Table songs -->
+        <TableView minWidth="-Infinity" prefHeight="900.0" prefWidth="1331.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn maxWidth="-1.0" minWidth="66.55" prefWidth="66.55"/>
+                <TableColumn maxWidth="-1.0" minWidth="66.55" prefWidth="66.55" text="N."/>
+                <TableColumn maxWidth="-1.0" minWidth="399.3" prefWidth="399.3" text="Titolo"/>
+                <TableColumn maxWidth="-1.0" minWidth="133.1" prefWidth="133.1" text="Durata"/>
+                <TableColumn maxWidth="-1.0" minWidth="650.0" prefWidth="640.0" text="Percorso"/>
+            </columns>
+        </TableView>
+    </center>
 
-             <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                 <graphic>
-                     <ImageView pickOnBounds="true" smooth="false">
-                         <image>
-                             <Image url="/images/playeraction/shuffle.png" />
-                         </image>
-                     </ImageView>
-                 </graphic>
-             </Button>
+    <!-- Top -->
+    <top>
+        <VBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Window menu bar -->
+                <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                        <Button id="closeBtn" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/windowaction/close.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
-            <Slider blockIncrement="0.1" max="1.0" orientation="VERTICAL" value="0.5">
-               <padding>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-               </padding></Slider>
-         </children>
-      </HBox>
-   </bottom>
+                        <Button id="squared" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/windowaction/maximize.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
-   <left>
-      <TreeView editable="true" prefHeight="400.0" prefWidth="189.0" BorderPane.alignment="CENTER" />
-   </left>
+                        <Button id="squared" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/windowaction/reduce.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </items>
+                </ToolBar>
 
-   <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn prefWidth="42.0" text="N." />
-          <TableColumn prefWidth="131.0" text="Titolo" />
-            <TableColumn prefWidth="52.0" text="Durata" />
-            <TableColumn prefWidth="185.0" text="Percorso" />
-        </columns>
-      </TableView>
-   </center>
+                <!-- Player action bar -->
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/playeraction/lyrics.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
-   <top>
-      <VBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
-         <children>
-            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
-              <items>
-                  <Button id="closeBtn" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                      <graphic>
-                          <ImageView pickOnBounds="true" smooth="false">
-                              <image>
-                                  <Image url="/images/windowaction/close.png" />
-                              </image>
-                          </ImageView>
-                      </graphic>
-                  </Button>
-                  <Button id="squared" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                      <graphic>
-                          <ImageView pickOnBounds="true" smooth="false">
-                              <image>
-                                  <Image url="/images/windowaction/maximize.png" />
-                              </image>
-                          </ImageView>
-                      </graphic>
-                  </Button>
-                  <Button id="squared" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                      <graphic>
-                          <ImageView pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="/images/windowaction/reduce.png" />
-                           </image>
-                          </ImageView>
-                      </graphic>
-                  </Button>
-              </items>
-            </ToolBar>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <HBox fillHeight="false" prefHeight="0.0" prefWidth="0.0">
-                     <children>
-                         <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                             <graphic>
-                                 <ImageView pickOnBounds="true" preserveRatio="true">
-                                     <image>
-                                         <Image url="/images/playlistaction/remove.png" />
-                                     </image>
-                                 </ImageView>
-                             </graphic>
-                         </Button>
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/playeraction/play.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
-                         <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
-                             <graphic>
-                                 <ImageView pickOnBounds="true" preserveRatio="true">
-                                     <image>
-                                         <Image url="/images/playlistaction/add.png" />
-                                     </image>
-                                 </ImageView>
-                             </graphic>
-                         </Button>
-                     </children>
-                  </HBox>
-                  <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/playeraction/backward.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
-                  <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0">
-                     <children>
-                        <TextField nodeOrientation="RIGHT_TO_LEFT" prefColumnCount="18" promptText="Search" />
-                     </children>
-                  </HBox>
+                        <Slider prefHeight="50" HBox.hgrow="ALWAYS"/>
 
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </top>
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/playeraction/forward.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
 
+                        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                            <graphic>
+                                <ImageView pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="/images/playeraction/shuffle.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <!-- Volume slider -->
+                        <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="80.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Volume"/>
+                                <Slider blockIncrement="0.1" max="1.0" orientation="VERTICAL" value="0.5"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
 </BorderPane>

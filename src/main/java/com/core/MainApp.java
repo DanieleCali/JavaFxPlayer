@@ -3,10 +3,12 @@ package com.core;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.event.WeakEventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ToolBar;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -15,14 +17,10 @@ import org.slf4j.LoggerFactory;
 
 /** Main Application Class */
 public class MainApp extends Application {
-
-    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
     private double mouseDragDeltaX = 0;
     private double mouseDragDeltaY = 0;
-    private EventHandler<MouseEvent> mousePressedHandler;
-    private EventHandler<MouseEvent> mouseDraggedHandler;
-    private WeakEventHandler<MouseEvent> weakMousePressedHandler;
-    private WeakEventHandler<MouseEvent> weakMouseDraggedHandler;
+
+    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
 
     public static void main(String[] args) {
         launch(args);
@@ -53,18 +51,18 @@ public class MainApp extends Application {
      * @param stage the stage to drag
      */
     protected void allowDrag(Node node, Stage stage) {
-        mousePressedHandler = (MouseEvent event) -> {
+        EventHandler<MouseEvent> mousePressedHandler = (MouseEvent event) -> {
             mouseDragDeltaX = node.getLayoutX() - event.getSceneX();
             mouseDragDeltaY = node.getLayoutY() - event.getSceneY();
         };
-        weakMousePressedHandler = new WeakEventHandler<>(mousePressedHandler);
+        WeakEventHandler<MouseEvent> weakMousePressedHandler = new WeakEventHandler<>(mousePressedHandler);
         node.setOnMousePressed(weakMousePressedHandler);
 
-        mouseDraggedHandler = (MouseEvent event) -> {
+        EventHandler<MouseEvent> mouseDraggedHandler = (MouseEvent event) -> {
             stage.setX(event.getScreenX() + mouseDragDeltaX);
             stage.setY(event.getScreenY() + mouseDragDeltaY);
         };
-        weakMouseDraggedHandler = new WeakEventHandler<>(mouseDraggedHandler);
+        WeakEventHandler<MouseEvent> weakMouseDraggedHandler = new WeakEventHandler<>(mouseDraggedHandler);
         node.setOnMouseDragged(weakMouseDraggedHandler);
     }
 }
