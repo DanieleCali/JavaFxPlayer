@@ -186,6 +186,7 @@
     -fx-background-color:#282828;
     -fx-opacity: 0.7;
     -fx-background-radius: 100;
+    -fx-text-fill: #ffffff;
 }
 
 
@@ -204,7 +205,7 @@
     -fx-background-color: red;
 }
 
-#bottoni{
+#squared{
     -fx-background-radius: 0;
 }
 
