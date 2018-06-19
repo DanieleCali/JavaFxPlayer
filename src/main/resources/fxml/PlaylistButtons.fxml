@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<!-- Add/Remove playlist buttons  -->
+<HBox minHeight="-Infinity" minWidth="-Infinity">
+    <children>
+        <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="0.0" prefWidth="0.0">
+            <children>
+                <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/playlistaction/add.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/playlistaction/remove.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </HBox>
+
+        <Pane prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+
+        <!-- Search bar -->
+        <HBox prefHeight="0.0" prefWidth="0.0">
+            <children>
+                <TextField minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT"
+                           prefColumnCount="18" promptText="Search"/>
+            </children>
+        </HBox>
+    </children>
+</HBox>

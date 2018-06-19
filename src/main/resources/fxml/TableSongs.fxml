@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Table Songs -->
+<TableView minWidth="-Infinity" prefHeight="900.0" prefWidth="1331.0" BorderPane.alignment="CENTER">
+    <columns>
+        <TableColumn maxWidth="-1.0" minWidth="66.55" prefWidth="66.55"/>
+        <TableColumn maxWidth="-1.0" minWidth="66.55" prefWidth="66.55" text="N."/>
+        <TableColumn maxWidth="-1.0" minWidth="399.3" prefWidth="399.3" text="Titolo"/>
+        <TableColumn maxWidth="-1.0" minWidth="133.1" prefWidth="133.1" text="Durata"/>
+        <TableColumn maxWidth="-1.0" minWidth="650.0" prefWidth="640.0" text="Percorso"/>
+    </columns>
+</TableView>

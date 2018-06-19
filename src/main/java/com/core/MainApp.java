@@ -32,7 +32,8 @@ public class MainApp extends Application {
         String fxmlFile = "/fxml/MusicPlayerGUI.fxml";
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();
-        Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Parent rootNode = loader.load();
 
         log.debug("Showing JFX scene");
         Scene scene = new Scene(rootNode, 1520, 900);

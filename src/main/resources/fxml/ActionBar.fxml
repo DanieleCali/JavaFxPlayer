@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Player action bar -->
+<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+    <children>
+        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+            <graphic>
+                <ImageView pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="/images/playeraction/lyrics.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+            <graphic>
+                <ImageView pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="/images/playeraction/play.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+            <graphic>
+                <ImageView pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="/images/playeraction/backward.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Slider prefHeight="50" HBox.hgrow="ALWAYS"/>
+
+        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+            <graphic>
+                <ImageView pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="/images/playeraction/forward.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+            <graphic>
+                <ImageView pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="/images/playeraction/shuffle.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <!-- Volume slider -->
+        <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="80.0" prefWidth="100.0">
+            <children>
+                <Label text="Volume"/>
+                <Slider blockIncrement="0.1" max="1.0" orientation="VERTICAL" value="0.5"/>
+            </children>
+        </VBox>
+    </children>
+</HBox>
