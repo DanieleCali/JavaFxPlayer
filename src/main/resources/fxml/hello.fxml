@@ -16,5 +16,4 @@
     <Button text="Say Hello" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
 
     <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
-
 </MigPane >
