@@ -4,4 +4,3 @@
 
 <!-- Playlist View -->
 <TreeView editable="true" prefHeight="400.0" prefWidth="189.0" BorderPane.alignment="CENTER"/>
-
