@@ -47,7 +47,6 @@
         </plugins>
     </build>
 
-
     <dependencies>
         <!-- MigLayout -->
         <dependency>
@@ -87,6 +86,13 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-    </dependencies>
 
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>
