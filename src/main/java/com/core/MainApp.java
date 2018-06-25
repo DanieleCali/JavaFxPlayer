@@ -1,5 +1,6 @@
 package com.core;
 
+import com.controllers.playlist.PlaylistsList;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.event.WeakEventHandler;
@@ -10,12 +11,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 /** Main Application Class */
 public class MainApp extends Application {
     private static final Logger log = LoggerFactory.getLogger(MainApp.class);
+
+    @Getter
+    public static PlaylistsList playlistsList;
 
     private double mouseDragDeltaX = 0;
     private double mouseDragDeltaY = 0;
@@ -42,6 +48,7 @@ public class MainApp extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         allowDrag(rootNode, stage);
         stage.show();
+        playlistsList = new PlaylistsList();
     }
 
     /**

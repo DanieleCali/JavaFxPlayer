@@ -29,6 +29,7 @@ public class PlaylistButtonsController {
     public void addPlaylist(){
         Playlist playlist = new Playlist("New Playlist", new ArrayList<>());
         TreeItem<String> treeItemPlaylist = new TreeItem<>("New Playlist");
+        MainApp.playlistsList.addPlaylist(playlist);
         playListTreeViewController.getPlaylistTreeView().getRoot().getChildren().add(treeItemPlaylist);
         log.info("Add playlist button pressed");
     }
@@ -39,8 +40,10 @@ public class PlaylistButtonsController {
     public void removePlaylist(){
         TreeItem<String> root = playListTreeViewController.getPlaylistTreeView().getRoot();
         int index = playListTreeViewController.getPlaylistTreeView().getSelectionModel().getSelectedIndex();
-        log.info("index: " + index);
-        if (index <= root.getChildren().size() && index > 0)  root.getChildren().remove(index-1);
-        log.info("Remove playlist button pressed");
+        if (index <= root.getChildren().size() && index > 0)  {
+            root.getChildren().remove(index - 1);
+            log.info("Removing " + MainApp.playlistsList.getPlaylists().get(index - 1).getName());
+            MainApp.playlistsList.removePlaylist(index - 1);
+        }
     }
 }
