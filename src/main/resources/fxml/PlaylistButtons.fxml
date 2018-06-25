@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.Pane?>
 
 <!-- Add/Remove playlist buttons  -->
-<HBox minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:controller="com.controllers.playlist.PlaylistButtonsController" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="0.0" prefWidth="0.0">
             <children>
-                <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                <Button fx:id="addPlaylistBtn" onAction="#addPlaylist" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
                     <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -23,7 +23,7 @@
                     </graphic>
                 </Button>
 
-                <Button contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
+                <Button fx:id="removePlaylistBtn" onAction="#removePlaylist" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false">
                     <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                             <image>

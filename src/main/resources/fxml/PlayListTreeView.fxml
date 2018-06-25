@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TreeItem?>
+<?import javafx.scene.control.TreeView?>
+
+<!-- Playlist Tree VIew -->
+<TreeView fx:id="playlistTreeView" fx:controller="com.controllers.playlist.PlayListTreeViewController" editable="true" xmlns:fx="http://javafx.com/fxml/1">
+    <TreeItem value="Playlist" expanded="true" />
+</TreeView>

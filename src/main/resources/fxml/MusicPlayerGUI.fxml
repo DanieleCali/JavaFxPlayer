@@ -4,23 +4,23 @@
 <?import javafx.scene.layout.VBox?>
 
 <!-- Main Panel -->
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+<BorderPane fx:controller="com.controllers.MainController" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
 
     <!-- Add/Remove playlist buttons  -->
     <bottom>
-        <fx:include source="PlaylistButtons.fxml" />
+        <fx:include fx:id="playlistButtons" source="PlaylistButtons.fxml" />
     </bottom>
-
-    <!-- Playlist view -->
-    <left>
-        <fx:include source="PlaylistView.fxml" />
-    </left>
 
     <!-- Table songs -->
     <center>
         <fx:include source="TableSongs.fxml" />
     </center>
+
+    <!-- Playlist View -->
+    <left>
+        <fx:include fx:id="playlistTreeView" source="PlayListTreeView.fxml" />
+    </left>
 
     <top>
         <VBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">

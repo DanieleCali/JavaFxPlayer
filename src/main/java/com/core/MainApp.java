@@ -1,26 +1,30 @@
 package com.core;
 
+import com.controllers.playlist.PlaylistsList;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.event.WeakEventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ToolBar;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 /** Main Application Class */
 public class MainApp extends Application {
+    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
+
+    @Getter
+    public static PlaylistsList playlistsList;
+
     private double mouseDragDeltaX = 0;
     private double mouseDragDeltaY = 0;
-
-    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
 
     public static void main(String[] args) {
         launch(args);
@@ -33,7 +37,7 @@ public class MainApp extends Application {
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
-        Parent rootNode = loader.load();
+        BorderPane rootNode = loader.load();
 
         log.debug("Showing JFX scene");
         Scene scene = new Scene(rootNode, 1520, 900);
@@ -44,6 +48,7 @@ public class MainApp extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         allowDrag(rootNode, stage);
         stage.show();
+        playlistsList = new PlaylistsList();
     }
 
     /**
